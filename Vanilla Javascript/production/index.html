@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="CSS/main.css" type="text/css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+		integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous"
+		referrerpolicy="no-referrer" />
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+	<title>FindMovie</title>
+</head>
+
+<body>
+	<header>
+		<figure class="logo">
+			<a href="index.html">
+				<img src="images/logo.png">
+			</a>
+		</figure>
+		<div id="showBookmarksButton">
+			<i class="fas fa-bookmark fa-2x"></i>
+		</div>
+	</header>
+	<nav>
+		<!-- Give wrapper ID to target with jQuery & CSS -->
+		<section id="recommendedMovies">
+			<h3 class="title">Recommended Movies</h3>
+			<ul class="MS-content" id="recommendedMoviesContainer">
+				<!-- <li class="item">
+					<img src="https://images-na.ssl-images-amazon.com/images/I/71LNVGVpWYL._AC_SL1020_.jpg">
+					<details>
+						<summary>
+							<div>
+								<h5>interstellar</h5>
+								<p class="Genre">Adventure, Drama, Sci-Fi</p>
+							</div>
+							<div>
+								<i class="fas fa-star"></i><span class="rating">8.3</span>
+							</div>
+						</summary>
+					</details>
+				</li>
+				<li class="item">
+					<img src="https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_.jpg">
+					<details>
+						<summary>
+							<div>
+								<h5>Avengers: Endgame - Journey's End </h5>
+								<p class="Genre">Adventure, Drama, Sci-Fi</p>
+							</div>
+							<div>
+								<i class="fas fa-star"></i><span class="rating">8.3</span>
+							</div>
+						</summary>
+					</details>
+				</li>
+				<li class="item">
+					<img src="https://image.tmdb.org/t/p/w780/hjS9mH8KvRiGHgjk6VUZH7OT0Ng.jpg">
+					<details>
+						<summary>
+							<div>
+								<h5>Cruella</h5>
+								<p class="Genre">Drama, Action</p>
+							</div>
+							<div>
+								<i class="fas fa-star"></i><span class="rating">8.3</span>
+							</div>
+						</summary>
+					</details>
+				</li>
+				<li class="item">
+					<img src="https://image.tmdb.org/t/p/w780/hjS9mH8KvRiGHgjk6VUZH7OT0Ng.jpg">
+					<details>
+						<summary>
+							<div>
+								<h5>Cruella</h5>
+								<p class="Genre">Drama, Action</p>
+							</div>
+							<div>
+								<i class="fas fa-star"></i><span class="rating">8.3</span>
+							</div>
+						</summary>
+					</details>
+				</li>
+				<li class="item">
+					<img src="https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_.jpg">
+					<details>
+						<summary>
+							<div>
+								<h5>Cruella</h5>
+								<p class="Genre">Drama, Action</p>
+							</div>
+							<div>
+								<i class="fas fa-star"></i><span class="rating">8.3</span>
+							</div>
+						</summary>
+					</details>
+				</li>
+				<li class="item">
+					<img src="https://images-na.ssl-images-amazon.com/images/I/71LNVGVpWYL._AC_SL1020_.jpg">
+					<details>
+						<summary>
+							<div>
+								<h5>interstellar</h5>
+								<p class="Genre">Adventure, Drama, Sci-Fi</p>
+							</div>
+							<div>
+								<i class="fas fa-star"></i><span class="rating">8.3</span>
+							</div>
+						</summary>
+					</details>
+				</li>
+				<li class="item">
+					<img src="https://images-na.ssl-images-amazon.com/images/I/71LNVGVpWYL._AC_SL1020_.jpg">
+					<details>
+						<summary>
+							<div>
+								<h5>interstellar</h5>
+								<p class="Genre">Adventure, Drama, Sci-Fi</p>
+							</div>
+							<div>
+								<i class="fas fa-star"></i><span class="rating">8.3</span>
+							</div>
+						</summary>
+					</details>
+				</li>
+				<li class="item">
+					<img src="https://images-na.ssl-images-amazon.com/images/I/71LNVGVpWYL._AC_SL1020_.jpg">
+					<details>
+						<summary>
+							<div>
+								<h5>interstellar</h5>
+								<p class="Genre">Adventure, Drama, Sci-Fi</p>
+							</div>
+							<div>
+								<i class="fas fa-star"></i><span class="rating">8.3</span>
+							</div>
+						</summary>
+					</details>
+				</li> -->
+			</ul>
+			<div class="MS-controls">
+				<button class="MS-left"><i class="fas fa-chevron-left fa-3x" aria-hidden="true"></i></button>
+				<button class="MS-right"><i class="fas fa-chevron-right fa-3x" aria-hidden="true"></i></button>
+			</div>
+		</section>
+	</nav>
+	<!-- <section class="bookmarksContainer"></section> -->
+	<section class="bookmarksContainer">
+		<div id="Container" class="bookmarksHidden">
+			<div id="bookmarks">
+				<h4 class="bookmarkTitle">Bookmarks</h4>
+				<ul id="bookmarksList">
+					<!-- <li class="bookmark">
+				<img src="https://images-na.ssl-images-amazon.com/images/I/71LNVGVpWYL._AC_SL1020_.jpg">
+				<div>
+					<h5>interstellar</h5>
+					<i class="fas fa-star"></i><span class="rating">8.3</span>
+				</div>
+			</li>
+			<li class="bookmark">
+				<img src="https://images-na.ssl-images-amazon.com/images/I/71LNVGVpWYL._AC_SL1020_.jpg">
+				<div>
+					<h5>interstellar</h5>
+					<i class="fas fa-star"></i><span class="rating">8.3</span>
+				</div>
+			</li>
+			<li class="bookmark">
+				<img src="https://images-na.ssl-images-amazon.com/images/I/71LNVGVpWYL._AC_SL1020_.jpg">
+				<div>
+					<h5>interstellar</h5>
+					<i class="fas fa-star"></i><span class="rating">8.3</span>
+				</div>
+			</li>
+			<li class="bookmark">
+				<img src="https://images-na.ssl-images-amazon.com/images/I/71LNVGVpWYL._AC_SL1020_.jpg">
+				<div>
+					<h5>interstellar</h5>
+					<i class="fas fa-star"></i><span class="rating">8.3</span>
+				</div>
+			</li> -->
+				</ul>
+			</div>
+		</div>
+	</section>
+
+
+	<main>
+		<section class="searchContainer">
+			<form class="searchForm">
+				<div>
+					<input type="text" class="search" placeholder="Search movies ...">
+					<button type="submit"><i class="fas fa-search"></i><span>Search</span></button>
+				</div>
+			</form>
+		</section>
+		<section class="MovieInfo" id="moreInfo"></section>
+		<!-- <section class="MovieInfo" id="moreInfo">
+			<div>
+				<button class="backButton"><i class="fas fa-arrow-left"></i>back</button>
+			</div>
+			<figure>
+				<img src="https://images-na.ssl-images-amazon.com/images/I/91Lpv1aIkmL._AC_SL1500_.jpg">
+			</figure>
+			<div class="inforamtion">
+				<div class="movieTitle">
+					<h3>Movies Name</h3>
+					<button class="bookmarkButton">
+						<i class="far fa-bookmark fa-2x"></i>
+					</button>
+				</div>	
+				<div class="runTime">
+					<i class="far fa-clock"></i>
+					<span>115 min </span>
+				</div>
+				<ul>
+					<li>
+						Release:
+						<span class="movieRelease infoText">03 Apr 2015</span>
+					</li>
+					<li>
+						Genre:
+						<span class="movieGenre infoText">Action, Drama, History, War</span>
+					</li>
+					<li>
+						Rating:
+						<span class="imdbVotes infoText">6.2</span>
+						<i class="fab fa-imdb"></i>
+					</li>
+					<li>
+						Language:
+						<span class="language infoText">English</span>
+					</li>
+					<li>
+						<p class="summary">A fallen warrior rises against a corrupt and sadistic ruler to avenge his dishonored master in a
+							sword-clashing adventure of loyalty, honor, and vengeance.</p>
+					</li>
+					<li>
+						imdbID:
+						<span class="imdbID infoText">tt2493486</span>
+					</li>
+					<li class="actorsList">
+						<h3>Actors</h3>
+						<p class="actors">Clive Owen, Morgan Freeman, Cliff Curtis, Aksel Hennie</p>
+					</li>
+					<a href="https://www.imdb.com/title/tt0468569/" class="redirecButton" target="_blank">See on IMDB website<i
+							class="fas fa-share-square fa"></i></a>
+				</ul>
+			</div>
+
+		</section> -->
+		<section class="searchResultsSection">
+			<ul class="searchResults"></ul>
+			<section class="pagination">
+				<ul></ul>
+			</section>
+		</section>
+		<!-- <section class="searchResults hidden">
+			<h5>Results of: <span class="searchQuery">Results</span></h5>
+			<ul>
+				<li class="item">
+					<img src="https://images-na.ssl-images-amazon.com/images/I/71LNVGVpWYL._AC_SL1020_.jpg">
+					<details>
+						<summary>
+							<div>
+								<h5>interstellar</h5>
+								<p class="Genre">Adventure, Drama, Sci-Fi</p>
+							</div>
+							<div>
+								<i class="fas fa-star"></i><span class="rating">8.3</span>
+							</div>
+						</summary>
+					</details>
+				</li>
+				<li class="item">
+					<img src="https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_.jpg">
+					<details>
+						<summary>
+							<div>
+								<h5>Avengers: Endgame - Journey's End </h5>
+								<p class="Genre">Adventure, Drama, Sci-Fi</p>
+							</div>
+							<div>
+								<i class="fas fa-star"></i><span class="rating">8.3</span>
+							</div>
+						</summary>
+					</details>
+				</li>
+				<li class="item">
+					<img src="https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_.jpg">
+					<details>
+						<summary>
+							<div>
+								<h5>Avengers: Endgame - Journey's End </h5>
+								<p class="Genre">Adventure, Drama, Sci-Fi</p>
+							</div>
+							<div>
+								<i class="fas fa-star"></i><span class="rating">8.3</span>
+							</div>
+						</summary>
+					</details>
+				</li>
+				<li class="item">
+					<img src="https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_.jpg">
+					<details>
+						<summary>
+							<div>
+								<h5>Avengers: Endgame - Journey's End </h5>
+								<p class="Genre">Adventure, Drama, Sci-Fi</p>
+							</div>
+							<div>
+								<i class="fas fa-star"></i><span class="rating">8.3</span>
+							</div>
+						</summary>
+					</details>
+				</li>
+				<li class="item">
+					<img src="https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_.jpg">
+					<details>
+						<summary>
+							<div>
+								<h5>Avengers: Endgame - Journey's End </h5>
+								<p class="Genre">Adventure, Drama, Sci-Fi</p>
+							</div>
+							<div>
+								<i class="fas fa-star"></i><span class="rating">8.3</span>
+							</div>
+						</summary>
+					</details>
+				</li>
+			</ul>
+		</section>  -->
+		<!-- <section class="pagination">
+			<ul>
+				<li class="previous">
+					<i class="fas fa-caret-left fa-2x"></i>
+				</li>
+				<li class="activePage">1</li>
+				<li class="morepages">...</li>
+				<li>3</li>
+				<li>4</li>
+				<li class="morepages">...</li>
+				<li>8</li>
+				<li class="next">
+					<i class="fas fa-caret-right fa-2x"></i>
+				</li>
+			</ul>
+		</section> -->
+	</main>
+	<script src="./jquery-3-6.min.js"></script>
+	<script src="./multislider.min.js">
+	</script>
+	<script src="./bundle.js"></script>
+
+
+</body>
+
+</html>

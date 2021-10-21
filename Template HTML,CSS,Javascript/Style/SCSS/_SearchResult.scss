@@ -1,0 +1,29 @@
+@import "config";
+
+.searchResultsSection {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    & > h5 {
+        text-align: center;
+        color: darken($primaryTextColor, 10%);
+        padding: 20px;
+        font-size: 1.4rem;
+        .searchQuery {
+            font-size: 1rem;
+            padding: 10px;
+            display: block;
+            color: $hoverColor;
+        }
+    }
+    ul {
+        text-align: center;
+    }
+    .searchResults {
+        transition: transform 0.5s;
+        .item {
+            @extend %movie;
+        }
+    }
+}

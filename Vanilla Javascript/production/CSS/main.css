@@ -1,0 +1,609 @@
+*{
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+	font-family: 'Titillium Web', sans-serif;
+	list-style: none;
+}
+
+
+html{
+	scroll-behavior: smooth;
+}
+
+body{
+	background-color:#26282B;
+}
+
+header{
+	color:#fff;
+	padding:20px;
+	display: flex;
+	justify-content:space-between;
+	align-items: center;
+	margin-bottom:50px;
+}
+
+header div{
+	color:#DC4444;
+	cursor: pointer;
+	margin-right: 50px;
+}
+
+header div:hover{
+	color:#eb7777;
+}
+
+
+.logo img{
+	width:120px;
+}
+
+.MS-controls button{
+	background:none;
+	color: white;
+	border:0;
+	cursor: pointer;
+}
+.MS-controls button:hover{
+	color:#DC4444;
+}
+
+.MS-left{
+	position: absolute;
+	left: 30px;
+	top: 60%;
+}
+
+.MS-right{
+	position: absolute;
+	right: 30px;
+	top: 60%;
+	z-index:2;
+}
+
+nav{
+	display:flex;
+	justify-content:center;
+}
+
+nav > section{
+	position: relative;
+	width:90%;
+}
+
+nav .title{
+	color:#eee;
+	width:92%;
+	margin: 30px auto;
+	border-bottom: #fff 1px solid;
+}
+
+.MS-content{
+	margin: 0 10%;
+	white-space: nowrap;
+	height:400px;
+	overflow-x: hidden;
+}
+
+.MS-content li,.searchResults li{
+	margin: 10px;
+	position: relative;
+	width: 17%;
+	display:inline-block;
+	cursor: pointer;
+	z-index:2;
+}
+
+
+@keyframes extendWidth{
+	from {
+		opacity:0;
+	}
+	to {
+		opacity:1;
+	}
+}
+
+.searchResultsSection{
+	position: relative;
+	width:80%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.searchResults{
+	transition: transform 0.5s;
+}
+
+
+.MS-content .item img:hover {
+	transform: scale(1.05);
+}
+
+
+.item{
+	height:95%;
+	overflow: hidden;
+	vertical-align: top;
+	box-shadow: 2px 2px 5px #000;
+}
+
+.item img{
+	display: block;
+	width:100%;
+	height:100%;
+	transition: transform 0.5s;
+}
+
+.item details{
+	color: #fff;
+	position: absolute;
+	height:30%;
+	width:100%;
+	bottom:0;
+	cursor: default;
+	background-color:rgba(38, 40, 43,0.8);
+}
+
+.item summary{
+	display:flex;
+	flex-direction:column;
+	justify-content:space-around;
+	height: 100%;
+	list-style:none;
+	white-space:normal;
+	padding:10px;
+}
+
+.item .Genre{
+	color:#DC4444;
+	font-size:0.8rem;
+}
+
+.item h4{
+	color: rgb(241, 241, 241);
+}
+
+.fa-star{
+	color:#e4c435;
+}
+
+.rating{
+	margin-left: 2%;
+
+}
+
+
+.bookmarksContainer{
+	width:260px;
+	display:block;
+	position:absolute;
+	right: 0;
+	top:120px;
+	overflow:scroll; 
+	-ms-overflow-style: none;  /* IE and Edge */
+	scrollbar-width: none;  /* Firefox */
+}
+
+.bookmarksContainer::-webkit-scrollbar {
+	display: none;
+  }
+
+#Container{
+	transition: all 1s;
+	position: relative;
+	z-index: 3;
+}
+
+#bookmarks{
+	width:100%;
+	min-width: 100%;
+	min-height:400px;
+	background-color: #373F42;
+	z-index: 1;
+}
+
+
+.bookmarkTitle{
+	background-color: rgb(70, 70, 70);
+	color: #eee;
+	padding: 5px;
+	text-align: center;
+}
+
+.bookmark a{
+	text-decoration: none;
+	background-color:#DC4444;
+	padding: 5px;
+	margin: 2%;
+	width:96%;
+	display:flex;
+	justify-content:space-between;
+	align-items: center;
+	color:#e0e0e0;
+	cursor: pointer;
+	position: relative;
+	font-size: 0.6rem;
+}
+
+.bookmark a::before{
+	content:"";
+	display:block;
+	width:0%;
+	height: 100%;
+	background-color: #000;
+	position: absolute;
+	left: 0;
+	top:0;
+	opacity: 0.3;
+	transition: width 0.5s;
+}
+
+.bookmark a:hover::before{
+	width:100%;
+}
+
+
+.bookmark .rating{
+	font-size: 0.9rem;
+	color: #000;
+}
+
+.bookmark div{
+	text-align:left;
+	width:180px;
+	font-size: 0.8rem;
+}
+
+.bookmark .rating{
+	font-size: 0.8rem;
+}
+
+.bookmark img{
+	width:70px;
+	padding-right: 10px;
+}
+
+.emptyBookmark{
+	color:#ffffff;
+	text-align:center;
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%, -50%);
+	width:80%;
+}
+
+.emptyBookmark h4{
+	padding: 10px;
+	font-family:'Times New Roman', Times, serif;
+}
+
+.emptyBookmark i{
+	color:#DC4444;
+}
+
+
+main{
+	color: #eee;
+	width:92%;
+	margin: 0 auto;
+}
+
+.searchContainer{
+	width: 70%;
+	margin:100px auto;
+}
+
+.searchContainer input{
+	color:#eee;
+	padding: 10px 30px;
+	font-size: 1.2rem;
+	border-radius:30px 0px 0px 30px;
+	width: 80%;
+	background-color:#DC4444;
+	border: #adadad 1px solid;
+	border-right: none;
+}
+
+.searchForm div{
+	display: flex;
+	justify-content:center;
+}
+
+.searchForm button{
+	padding:10px 20px;
+	font-size:1.1rem;
+	cursor: pointer;
+	border:#adadad 1px solid;
+	outline:none;
+	border-left: none;
+	border-radius: 0 30px 30px 0 ;
+	background-color:#26282B;
+	color:#fff;
+}
+
+
+.searchForm button > i{
+	padding:5px;
+	transition: transform 0.5s;
+}
+
+.searchForm button:hover i{
+	transform:rotate(60deg);
+}
+
+.searchContainer input::placeholder{
+	color:#eee;
+}
+
+.searchContainer input:focus{
+	outline:none;
+}
+
+
+
+.searchResults .item img{
+	opacity: 1;
+}
+
+.searchResults .item:hover img{
+	opacity: 0.6;
+}
+
+.searchResults ul{
+	text-align: center;
+}
+
+.searchResults > h5{
+	text-align: center;
+	color: rgb(194, 194, 194);;
+	margin: 0px auto 80px;
+	padding: 20px;
+	font-size:1.2rem;
+	overflow:hidden;
+	font-family: 'Times New Roman', serif;
+}
+
+.searchQuery{
+	font-size:1.8rem;
+	font-weight:300;
+	padding: 10px;
+	display:block;
+	color: #d87373;
+	margin-left: 10px;
+}
+
+.pagination ul{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	margin:50px auto;
+}
+
+.pagination ul > li{
+	width: 20px;
+	margin: 0 10px;
+	cursor: pointer;
+	text-align: center;
+	font-size:1.1rem;
+}
+
+.pagination ul > li:hover{
+	color:#DC4444;
+}
+
+.activePage{
+	border-bottom: #DC4444 2px solid;
+}
+
+.pagination .morepages{
+	color:#DC4444;
+	cursor:default;
+}
+
+.MovieInfo{
+	width:80%;
+	margin:50px auto;
+}
+
+.MovieInfo div:first-child{
+	padding: 30px 0;
+}
+
+.bookmarkButton{
+	background:none;
+	display: inline;
+	border: none;
+	color:#fff;
+	margin-left: 20px;
+	font-size:1.2rem;
+}
+
+.bookmarkButton:hover{
+	color:#DC4444;
+	cursor: pointer;
+}
+
+.backButton{
+	vertical-align:top;
+	padding: 5px 15px;
+	font-size: 1.2rem;
+	background:none;
+	border:none;
+	color:#fff;
+	cursor:pointer;
+}
+
+.backButton > i{
+	padding-right: 10px;
+}
+
+.backButton:hover > i{
+	transform: translateX(-5px);
+}
+
+.MovieInfo > figure{
+	display:inline-block;
+	width:30%;
+}
+
+.MovieInfo img{
+	width:100%;
+	border: #ffffff 1px solid;
+	box-shadow: 3px 3px 10px rgb(0, 0, 0); 
+}
+
+.inforamtion{
+	display:inline-block;
+	vertical-align:top;
+	width:60%;
+	padding: 0px 20px;
+	animation-name: extendWidth;
+	animation-duration:1s;
+}
+
+.fa-imdb{
+	color:#e4c435;
+	font-size: 1.3rem;
+	padding-left: 10px;
+}
+
+.movieTitle > h3{
+	display: inline;
+	color:#DC4444;
+	font-size: 1.5rem;
+	
+}
+
+.runTime{
+	padding: 0px 0 20px;
+	color: #adadad;
+}
+
+.infoText{
+	color:#eee;
+	padding-left:10px;
+}
+
+.inforamtion ul > li{
+	padding-bottom: 3px;;
+	color: #adadad;
+}
+
+.summary{
+	padding: 40px 0;
+	color:#eee;
+}
+
+.actorsList > h3{
+	color:#eee;
+	margin-top: 20px;
+}
+
+.actors{
+	color:rgb(172, 172, 172);;
+}
+
+.redirecButton{
+	display:block;
+	text-decoration: none;
+	text-align: center;
+	width:250px;
+	background-color: #d87373;
+	color: rgb(0, 0, 0);
+	padding: 10px 20px;
+	margin: 50px auto 0;
+	border-radius: 5px;
+	font-weight: 500;
+	transition: background-color 1s;
+}
+
+.redirecButton:hover{
+	background-color: #f84c4c;
+}
+
+.redirecButton > i{
+	padding-left: 10px;
+	color:rgb(0, 0, 0);
+}
+
+.bookmarksHidden{
+	transform: translateX(500px);
+}
+
+.hidden{
+	position:absolute;
+	transform: translateX(100vw);
+}
+
+
+@media only screen and (max-width:1500px){
+	.MS-content li,.searchResults li{
+		width:20%;
+	}
+	.MovieInfo > figure{
+		width:38%;
+	}
+}
+
+@media only screen and (max-width:1024px){
+	.MS-content li,.searchResults li{
+		width:30%;
+	}
+	.searchForm button > span{
+		display:none;
+	}
+	.MovieInfo > figure{
+		display:block;
+		width:50%;
+		margin:auto;
+	}
+	
+}
+
+@media only screen and (max-width:700px){
+	.MS-content li,.searchResults li{
+		width:100%;
+		margin: 10px auto;
+	}
+	.MS-left{
+		position: absolute;
+		left: 5px;
+		top: 60%;
+	}
+	
+	.MS-right{
+		position: absolute;
+		right:5px;
+		top: 60%;
+		z-index:2;
+	}
+	.bookmarksContainer{
+		width:200px;
+	}
+	.searchContainer{
+		width: 100%;
+	}
+	.searchContainer input{
+		font-size: 1.1rem;
+		width: 80%;
+	}
+	
+	.searchForm button{
+		font-size:1rem;
+		cursor: pointer;
+	}
+
+	.bookmark .fa-star,  .bookmark .rating{
+		display:none;
+	}
+	.MovieInfo > figure{
+		width:80%;
+	}
+	.MovieInfo .inforamtion{
+		width:90%;
+	}
+
+}

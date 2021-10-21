@@ -1,0 +1,21 @@
+{
+	"name": "movie-finder",
+	"version": "1.0.0",
+	"description": "Find movies information",
+	"main": "index.html",
+	"scripts": {
+		"build-dev": "webpack --config webpack.config.js --mode=development",
+		"build": "webpack --config webpack.config.js --mode=production",
+		"start": "webpack serve --mode development --open"
+	},
+	"author": "Ismail Nijazi",
+	"license": "ISC",
+	"devDependencies": {
+		"webpack": "^5.38.1",
+		"webpack-cli": "^4.7.0",
+		"webpack-dev-server": "^3.11.2"
+	},
+	"dependencies": {
+		"axios": "^0.21.1"
+	}
+}

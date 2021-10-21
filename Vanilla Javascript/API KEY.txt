@@ -1,0 +1,6 @@
+fc34f22f
+API: http://www.omdbapi.com/?i=tt3896198&apikey=fc34f22f
+
+API_2:
+key : 415772-FindMovi-GCFW1KCX
+API_URL : https://ott-details.p.rapidapi.com/search

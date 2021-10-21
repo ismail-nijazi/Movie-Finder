@@ -1,0 +1,42 @@
+@import "config";
+@import "Navbar";
+@import "Header";
+@import "Bookmark";
+@import "SearchResult";
+@import "Searchbar";
+@import "MovieInfo";
+@import "Pagination";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Titillium Web", sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+button {
+    border: none;
+    outline: none;
+    background: transparent;
+    text-align: center;
+}
+
+body {
+    background-color: $primaryBgColor;
+    overflow-x: hidden;
+}
+
+main {
+    color: $primaryTextColor;
+    width: 92%;
+    margin: 0 auto;
+}
+.bookmarksHidden {
+    transform: translateX(500px);
+}
