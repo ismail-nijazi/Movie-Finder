@@ -17,11 +17,11 @@ $primaryBgColor: #26282b;
     display: inline-block;
     cursor: pointer;
     z-index: 1;
-    height: 100%;
-    width: 220px;
+    height: 400px;
+    width: 250px;
     overflow: hidden;
     vertical-align: top;
-    & > img {
+    & a > img {
         display: block;
         width: 100%;
         height: 100%;
@@ -55,7 +55,7 @@ $primaryBgColor: #26282b;
 
 @media only screen and (max-width: 768px) {
     %movie {
-        width: 50%;
+        width: 47%;
     }
 }
 

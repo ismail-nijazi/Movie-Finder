@@ -1,16 +1,11 @@
 @import "../config";
 
 .bookmarksContainer {
-    width: 260px;
+    width: 300px;
     display: block;
     position: absolute;
     right: 0;
     top: 120px;
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-    &::-webkit-scrollbar {
-        display: none;
-    }
     .bookmarks {
         width: 100%;
         min-width: 100%;
@@ -20,6 +15,11 @@
         position: relative;
         z-index: 100;
         overflow-y: scroll;
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+        &::-webkit-scrollbar {
+            display: none;
+        }
         .bookmarkTitle {
             background-color: darken($primaryBgColor, 10%);
             color: darken($primaryTextColor, 10%);
@@ -70,7 +70,8 @@
                         color: #000;
                     }
                     div {
-                        width: 150px;
+                        width: 200px;
+                        font-family: Arial, sans-serif;
                     }
                 }
             }

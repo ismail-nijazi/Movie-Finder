@@ -1,22 +1,40 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import Pagination from "../Pagination/Pagination";
-import Context from "../../context/context";
+import movieInfoContext from "../../context/search_MovieInfo_context";
 import Movie from "../Movie";
+import Spinner from "../Spinner/Spinner";
 
 const SearchResult = () => {
-    const ctx = useContext(Context);
+    const ctx = useContext(movieInfoContext);
+    const searchResultRef = useRef();
+    useEffect(() => {
+        ctx.setSearchResultRef(searchResultRef);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
     const generateMoviesList = () => {
-        return ctx.searchResult.movies.map((item) => {
-            return <Movie movie={item} key={item.imdb_id} />;
-        });
+        if (ctx.searchResult.movies.length > 0) {
+            return ctx.searchResult.movies.map((item) => {
+                return <Movie movie={item} key={item.imdb_id} />;
+            });
+        }
+        return (
+            <figure>
+                <img src="Images/no_result.png" alt="no movies were found" />
+                <h4>No movie matched the search query</h4>
+            </figure>
+        );
     };
     return (
-        <section className="searchResultsSection">
+        <section className="searchResultsSection hide" ref={searchResultRef}>
+            {ctx.loading[0] ? <Spinner /> : ""}
             <h5>
-                Results of: <span className="searchQuery">"Results"</span>
+                Results of:{" "}
+                <span className="searchQuery">
+                    "{ctx.searchResult.searchQuery}"
+                </span>
             </h5>
             <ul className="searchResults hidden">{generateMoviesList()}</ul>
-            <Pagination />
+            {ctx.searchResult.total_pages > 1 ? <Pagination /> : ""}
         </section>
     );
 };

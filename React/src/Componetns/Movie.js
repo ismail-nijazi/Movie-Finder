@@ -1,14 +1,31 @@
-import React from "react";
+import React, { useContext } from "react";
+import Context from "../context/context";
+import movieInfoContext from "../context/search_MovieInfo_context";
 
 const Movie = (props) => {
+    const ctx = useContext(Context);
+    const ctxMovieInfo = useContext(movieInfoContext);
+
+    const showClickedMovieInfo = (e) => {
+        e.preventDefault();
+        ctx.changeCurrentMovie(props.movie.imdb_id);
+        ctxMovieInfo.showMovieInfoSection(
+            ctxMovieInfo.movieInfoSectionRef.current,
+            ctxMovieInfo.searchResultSectionRef.current
+        );
+        ctxMovieInfo.movieInfoSectionRef.current.scrollIntoView();
+    };
     return (
         <li className="item">
-            <img src={props.movie.image} alt={props.movie.name} />
+            <a href={`${ctx.movieInfo.imdb_id}`} onClick={showClickedMovieInfo}>
+                <img src={props.movie.image} alt={props.movie.name} />
+            </a>
+
             <details>
                 <summary>
                     <div>
                         <h5>{props.movie.name}</h5>
-                        <p className="Genre">{props.movie.genre.join(", ")}</p>
+                        <p className="Genre">{props.movie.genre}</p>
                     </div>
                     <div>
                         <i className="fas fa-star"></i>

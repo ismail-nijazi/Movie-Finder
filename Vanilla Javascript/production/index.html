@@ -1,35 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="CSS/main.css" type="text/css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+            integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap"
+            rel="stylesheet"
+        />
+        <title>FindMovie</title>
+    </head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="CSS/main.css" type="text/css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-		integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous"
-		referrerpolicy="no-referrer" />
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
-	<title>FindMovie</title>
-</head>
-
-<body>
-	<header>
-		<figure class="logo">
-			<a href="index.html">
-				<img src="images/logo.png">
-			</a>
-		</figure>
-		<div id="showBookmarksButton">
-			<i class="fas fa-bookmark fa-2x"></i>
-		</div>
-	</header>
-	<nav>
-		<!-- Give wrapper ID to target with jQuery & CSS -->
-		<section id="recommendedMovies">
-			<h3 class="title">Recommended Movies</h3>
-			<ul class="MS-content" id="recommendedMoviesContainer">
-				<!-- <li class="item">
+    <body>
+        <header>
+            <figure class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" />
+                </a>
+            </figure>
+            <div id="showBookmarksButton">
+                <i class="fas fa-bookmark fa-2x"></i>
+            </div>
+        </header>
+        <nav>
+            <!-- Give wrapper ID to target with jQuery & CSS -->
+            <section id="recommendedMovies">
+                <h3 class="title">Recommended Movies</h3>
+                <ul class="MS-content" id="recommendedMoviesContainer">
+                    <!-- <li class="item">
 					<img src="https://images-na.ssl-images-amazon.com/images/I/71LNVGVpWYL._AC_SL1020_.jpg">
 					<details>
 						<summary>
@@ -141,20 +147,30 @@
 						</summary>
 					</details>
 				</li> -->
-			</ul>
-			<div class="MS-controls">
-				<button class="MS-left"><i class="fas fa-chevron-left fa-3x" aria-hidden="true"></i></button>
-				<button class="MS-right"><i class="fas fa-chevron-right fa-3x" aria-hidden="true"></i></button>
-			</div>
-		</section>
-	</nav>
-	<!-- <section class="bookmarksContainer"></section> -->
-	<section class="bookmarksContainer">
-		<div id="Container" class="bookmarksHidden">
-			<div id="bookmarks">
-				<h4 class="bookmarkTitle">Bookmarks</h4>
-				<ul id="bookmarksList">
-					<!-- <li class="bookmark">
+                </ul>
+                <div class="MS-controls">
+                    <button class="MS-left">
+                        <i
+                            class="fas fa-chevron-left fa-3x"
+                            aria-hidden="true"
+                        ></i>
+                    </button>
+                    <button class="MS-right">
+                        <i
+                            class="fas fa-chevron-right fa-3x"
+                            aria-hidden="true"
+                        ></i>
+                    </button>
+                </div>
+            </section>
+        </nav>
+        <!-- <section class="bookmarksContainer"></section> -->
+        <section class="bookmarksContainer">
+            <div id="Container" class="bookmarksHidden">
+                <div id="bookmarks">
+                    <h4 class="bookmarkTitle">Bookmarks</h4>
+                    <ul id="bookmarksList">
+                        <!-- <li class="bookmark">
 				<img src="https://images-na.ssl-images-amazon.com/images/I/71LNVGVpWYL._AC_SL1020_.jpg">
 				<div>
 					<h5>interstellar</h5>
@@ -182,23 +198,28 @@
 					<i class="fas fa-star"></i><span class="rating">8.3</span>
 				</div>
 			</li> -->
-				</ul>
-			</div>
-		</div>
-	</section>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-
-	<main>
-		<section class="searchContainer">
-			<form class="searchForm">
-				<div>
-					<input type="text" class="search" placeholder="Search movies ...">
-					<button type="submit"><i class="fas fa-search"></i><span>Search</span></button>
-				</div>
-			</form>
-		</section>
-		<section class="MovieInfo" id="moreInfo"></section>
-		<!-- <section class="MovieInfo" id="moreInfo">
+        <main>
+            <section class="searchContainer">
+                <form class="searchForm">
+                    <div>
+                        <input
+                            type="text"
+                            class="search"
+                            placeholder="Search movies ..."
+                        />
+                        <button type="submit">
+                            <i class="fas fa-search"></i><span>Search</span>
+                        </button>
+                    </div>
+                </form>
+            </section>
+            <section class="MovieInfo" id="moreInfo"></section>
+            <!-- <section class="MovieInfo" id="moreInfo">
 			<div>
 				<button class="backButton"><i class="fas fa-arrow-left"></i>back</button>
 			</div>
@@ -252,13 +273,13 @@
 			</div>
 
 		</section> -->
-		<section class="searchResultsSection">
-			<ul class="searchResults"></ul>
-			<section class="pagination">
-				<ul></ul>
-			</section>
-		</section>
-		<!-- <section class="searchResults hidden">
+            <section class="searchResultsSection">
+                <ul class="searchResults"></ul>
+                <section class="pagination">
+                    <ul></ul>
+                </section>
+            </section>
+            <!-- <section class="searchResults hidden">
 			<h5>Results of: <span class="searchQuery">Results</span></h5>
 			<ul>
 				<li class="item">
@@ -333,7 +354,7 @@
 				</li>
 			</ul>
 		</section>  -->
-		<!-- <section class="pagination">
+            <!-- <section class="pagination">
 			<ul>
 				<li class="previous">
 					<i class="fas fa-caret-left fa-2x"></i>
@@ -349,13 +370,23 @@
 				</li>
 			</ul>
 		</section> -->
-	</main>
-	<script src="./jquery-3-6.min.js"></script>
-	<script src="./multislider.min.js">
-	</script>
-	<script src="./bundle.js"></script>
-
-
-</body>
-
+            <div class="lds-default">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </main>
+        <script src="./jquery-3-6.min.js"></script>
+        <script src="./multislider.min.js"></script>
+        <script src="./bundle.js"></script>
+    </body>
 </html>

@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import Context from "../../context/context";
 import Movie from "../Movie";
 
-
 const Header = () => {
     const ctx = useContext(Context);
     const generateMoviesList = () => {

@@ -11,7 +11,7 @@
                 color: $primaryTextColor;
                 padding: 10px 30px;
                 font-size: 1.2rem;
-                border-radius: 30px 0px 0px 30px;
+                border-radius: 40px 0px 0px 40px;
                 width: 80%;
                 background-color: $primaryColor;
                 border: darken($primaryTextColor, 20%) 1px solid;
@@ -19,6 +19,7 @@
                 outline: none;
                 &::placeholder {
                     color: $primaryTextColor;
+                    opacity: 1;
                 }
             }
             button {
@@ -28,7 +29,7 @@
                 border: darken($primaryTextColor, 20%) 1px solid;
                 outline: none;
                 border-left: none;
-                border-radius: 0 30px 30px 0;
+                border-radius: 0 40px 40px 0;
                 background-color: $primaryBgColor;
                 color: $primaryTextColor;
                 & > i {
@@ -40,6 +41,13 @@
                 }
             }
         }
+
+        .error {
+            display: block;
+            text-align: center;
+            margin: 1rem 0;
+            color: lighten($primaryColor, 5%);
+        }
     }
 }
 
@@ -49,8 +57,8 @@
         .searchForm button {
             font-size: 1rem;
             cursor: pointer;
-            i{
-              display: none;
+            i {
+                display: none;
             }
         }
         input {

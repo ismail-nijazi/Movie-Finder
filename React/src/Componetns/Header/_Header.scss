@@ -14,7 +14,7 @@ header {
         .MS-content {
             margin: 0 10%;
             white-space: nowrap;
-            height: 350px;
+            min-height: 400px;
             overflow-x: hidden;
             .item {
                 @extend %movie;
