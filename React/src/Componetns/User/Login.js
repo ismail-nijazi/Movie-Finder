@@ -2,6 +2,7 @@ import React, { useContext, useRef, useEffect, useState } from "react";
 import Context from "../../context/context";
 import Register from "./Register";
 import axios from "axios";
+import logo from "../../Images/logo.png";
 
 const Login = () => {
     const ctx = useContext(Context);
@@ -86,27 +87,24 @@ const Login = () => {
     };
 
     const loginSectionEvent = (e) => {
-        if (e.target.classList.contains("LoginPage")) {
-            ctx.userSection[0].current.classList.toggle("hide");
-        }
+        ctx.userSection[0].current.classList.toggle("hide");
     };
 
     return (
-        <section
-            className="LoginPage hide"
-            ref={userSection}
-            onClick={loginSectionEvent}
-        >
+        <section className="LoginPage hide" ref={userSection}>
             <div className="LoginForm" ref={loginRef}>
+                <button id="closeLogin" onClick={loginSectionEvent}>
+                    <i className="fas fa-times"></i>
+                </button>
                 <figure className="logo">
                     <a href="index.html">
-                        <img src="images/logo.png" alt="Movie Finder" />
+                        <img src={logo} alt="Movie Finder" />
                     </a>
                 </figure>
                 <h3>Login</h3>
                 <form method="POST" onSubmit={login}>
                     {error.error && (
-                        <p class="error_message">{error.message}</p>
+                        <p className="error_message">{error.message}</p>
                     )}
                     <div className="row">
                         <input
@@ -138,7 +136,10 @@ const Login = () => {
                         >
                             Register
                         </button>
-                        <a href="/#"> Forgot your password?</a>
+                        <a href="http://127.0.0.1:8000/user/resetPassword">
+                            {" "}
+                            Forgot your password?
+                        </a>
                     </div>
                 </form>
             </div>

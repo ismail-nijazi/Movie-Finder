@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import Context from "../../context/context";
+import logo from "../../Images/logo.png";
 
 const Navbar = () => {
     const ctx = useContext(Context);
@@ -47,7 +48,7 @@ const Navbar = () => {
         <nav>
             <figure className="logo">
                 <a href="/">
-                    <img src="images/logo.png" alt="Movie Finder" />
+                    <img src={logo} alt="Movie Finder" />
                 </a>
             </figure>
             <div>

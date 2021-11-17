@@ -3,6 +3,7 @@ import Pagination from "../Pagination/Pagination";
 import movieInfoContext from "../../context/search_MovieInfo_context";
 import Movie from "../Movie";
 import Spinner from "../Spinner/Spinner";
+import no_result from "../../Images/no_result.png";
 
 const SearchResult = () => {
     const ctx = useContext(movieInfoContext);
@@ -19,7 +20,7 @@ const SearchResult = () => {
         }
         return (
             <figure>
-                <img src="Images/no_result.png" alt="no movies were found" />
+                <img src={no_result} alt="no movies were found" />
                 <h4>No movie matched the search query</h4>
             </figure>
         );

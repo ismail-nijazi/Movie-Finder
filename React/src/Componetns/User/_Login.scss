@@ -10,10 +10,9 @@
     z-index: 1000;
     background-color: #4b4b4ba8;
     .LoginForm {
-        width: 600px;
-        min-width: 400px;
-        height: 800px;
-        background-color: lighten($primaryBgColor, 40%);
+        width: 500px;
+        height: 700px;
+        background-color: lighten($primaryBgColor, 30%);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -32,8 +31,27 @@
         &::-webkit-scrollbar {
             display: none;
         }
+
+        #closeLogin {
+            align-self: flex-end;
+            justify-self: flex-start;
+            margin: 10px;
+            padding: 5px 10px;
+            background-color: lighten($primaryBgColor, 30%);
+            cursor: pointer;
+            i {
+                font-size: 2rem;
+                color: #923131;
+                transition: 1s;
+            }
+
+            &:active i {
+                color: $primaryTextColor;
+            }
+        }
+
         figure {
-            background-color: $primaryBgColor;
+            background-color: lighten($primaryBgColor, 20%);
             width: 100%;
             text-align: center;
             padding: 10px;
@@ -58,7 +76,8 @@
                 width: 100%;
                 margin-top: 1rem;
                 input {
-                    width: 100%;
+                    width: 48%;
+                    flex-grow: 1;
                     font-size: 1rem;
                     padding: 10px;
                     border-radius: 4px;
@@ -85,6 +104,30 @@
                 color: #04366e;
                 &:hover {
                     color: #196bc9;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .LoginPage {
+        .LoginForm {
+            width: 100vw;
+            height: 100vh;
+            justify-content: flex-start;
+            align-items: center;
+            border-radius: 0;
+            #closeLogin {
+                i {
+                    font-size: 1.5rem;
+                }
+            }
+            form {
+                width: 80%;
+                .row * {
+                    width: 100%;
+                    text-align: left;
                 }
             }
         }

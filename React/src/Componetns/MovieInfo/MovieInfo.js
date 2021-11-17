@@ -84,6 +84,12 @@ const MovieInfo = () => {
                 </div>
                 <ul>
                     <li>
+                        Type:
+                        <span className="movieRelease infoText">
+                            {ctx.movieInfo.type}
+                        </span>
+                    </li>
+                    <li>
                         Release:
                         <span className="movieRelease infoText">
                             {ctx.movieInfo.released_date}

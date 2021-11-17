@@ -1,5 +1,6 @@
 import React, { useContext, useRef, useEffect, useState } from "react";
 import Context from "../../context/context";
+import logo from "../../Images/logo.png";
 
 const Register = () => {
     const ctx = useContext(Context);
@@ -19,6 +20,10 @@ const Register = () => {
         ctx.registerRef[1](registerRef);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+    const loginSectionEvent = (e) => {
+        ctx.userSection[0].current.classList.toggle("hide");
+    };
 
     const showLogin = () => {
         ctx.loginRef[0].current.classList.remove("hide");
@@ -115,9 +120,12 @@ const Register = () => {
 
     return (
         <div className="LoginForm RegisterForm hide" ref={registerRef}>
+            <button id="closeLogin" onClick={loginSectionEvent}>
+                <i className="fas fa-times"></i>
+            </button>
             <figure className="logo">
                 <a href="index.html">
-                    <img src="images/logo.png" alt="Movie Finder" />
+                    <img src={logo} alt="Movie Finder" />
                 </a>
             </figure>
             <h3>Register</h3>

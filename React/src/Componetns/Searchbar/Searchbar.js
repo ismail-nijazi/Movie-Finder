@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import movieInfoContext from "../../context/search_MovieInfo_context";
 
+
 const Searchbar = () => {
     const ctx = useContext(movieInfoContext);
     const [error, setError] = useState(false);

@@ -11,6 +11,7 @@ const WatchListMovie = (props) => {
             ctxMovieInfo.movieInfoSectionRef.current,
             ctxMovieInfo.searchResultSectionRef.current
         );
+        ctxMovieInfo.movieInfoSectionRef.current.scrollIntoView();
     };
     return (
         <li className="bookmark" onClick={showClickedMovieInfo}>

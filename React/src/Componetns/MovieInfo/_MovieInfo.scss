@@ -50,8 +50,10 @@
             display: inline;
             color: $primaryColor;
             margin-left: 20px;
-            font-size: 1rem;
             cursor: pointer;
+            i {
+                font-size: 1.6rem;
+            }
         }
 
         .bookmarkButton:hover {
@@ -65,17 +67,17 @@
         .movieTitle > h3 {
             display: inline;
             color: $primaryColor;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
         }
         .runTime {
             padding: 0px 0 20px;
             color: darken($primaryColor, 10%);
-			i{
-				font-size: 1.2rem;
-			}
+            i {
+                font-size: 1.2rem;
+            }
             span {
-                margin-left:10px;
-				font-size: 1.2rem;
+                margin-left: 10px;
+                font-size: 1.2rem;
             }
         }
         ul > li {
@@ -120,7 +122,7 @@
 
 @media only screen and (max-width: 768px) {
     .MovieInfo {
-        width: 90%;
+        width: 100%;
         & > figure {
             display: block;
             width: 60%;
@@ -128,6 +130,9 @@
         }
         .inforamtion {
             width: 100%;
+            .movieTitle > h3 {
+                font-size: 1.3rem;
+            }
         }
     }
 }
