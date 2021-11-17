@@ -1,6 +1,7 @@
 node_modules
+**/node_modules
 media/
-Vanilla Javascript/
+Vanilla_Javascript\
 
 # Django #
 *.log
