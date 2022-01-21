@@ -1,6 +1,5 @@
 import React, { useContext, useRef, useEffect, useState } from "react";
 import Context from "../../context/context";
-import logo from "../../Images/logo.png";
 
 const Register = () => {
     const ctx = useContext(Context);
@@ -51,7 +50,7 @@ const Register = () => {
 
     const register = (e) => {
         e.preventDefault();
-        const url = `http://127.0.0.1:8000/user/register`;
+        const url = `${ctx.url[0]}/user/register`;
         const sendRegister = async (url) => {
             return fetch(url, {
                 method: "POST",
@@ -125,7 +124,7 @@ const Register = () => {
             </button>
             <figure className="logo">
                 <a href="index.html">
-                    <img src={logo} alt="Movie Finder" />
+                    <img src={ctx.images[0].logo} alt="Movie Finder" />
                 </a>
             </figure>
             <h3>Register</h3>

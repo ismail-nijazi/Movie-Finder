@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="sv">
     <head>
@@ -17,13 +19,17 @@
             href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap"
             rel="stylesheet"
         />
-        <link type="icon" href="static/logo_tab.ico" />
+        <link
+            rel="shortcut icon"
+            type="image/png"
+            href="{% static 'logo_tab.ico' %}"
+        />
         <script
             src="static/js/jquery-3-6.min.js"
             type="text/javascript"
         ></script>
         <title>Movie Finder</title>
-        <link href="/static/css/main.e56c3903.chunk.css" rel="stylesheet" />
+        <link href="/static/css/main.d7c42540.chunk.css" rel="stylesheet" />
     </head>
     <body>
         <div id="root"></div>
@@ -134,9 +140,8 @@
             })([]);
         </script>
         <script src="/static/js/2.ab111824.chunk.js"></script>
-        <script src="/static/js/main.9d905dc3.chunk.js"></script>
+        <script src="/static/js/main.c99b449c.chunk.js"></script>
         <script src="/static/js/multislider.min.js"></script>
-
         <script>
             setTimeout(() => {
                 $("#recommendedMovies").multislider();

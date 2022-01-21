@@ -18,7 +18,7 @@ const MovieInfo = () => {
     }, []);
 
     const addToWatchList = () => {
-        const url = `http://127.0.0.1:8000/user/watchList/add/${ctx.movieInfo.imdb_id}`;
+        const url = `${ctx.url[0]}/user/watchList/add/${ctx.movieInfo.imdb_id}`;
         const token = JSON.parse(localStorage.getItem("findMovieToken"));
         fetch(url, {
             method: "POST",
@@ -60,7 +60,14 @@ const MovieInfo = () => {
         <section className="MovieInfo hide" id="moreInfo" ref={movieInfoRef}>
             <div>{backButton()}</div>
             <figure>
-                <img src={ctx.movieInfo.image} alt={ctx.movieInfo.name} />
+                <img
+                    src={
+                        ctx.movieInfo.image_url != null
+                            ? ctx.movieInfo.image_url
+                            : ctx.movieInfo.image
+                    }
+                    alt={ctx.movieInfo.name}
+                />
             </figure>
             <div className="inforamtion">
                 <div className="movieTitle">

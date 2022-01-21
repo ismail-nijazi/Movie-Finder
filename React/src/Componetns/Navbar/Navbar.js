@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import Context from "../../context/context";
-import logo from "../../Images/logo.png";
 
 const Navbar = () => {
     const ctx = useContext(Context);
@@ -17,7 +16,7 @@ const Navbar = () => {
     };
 
     const toggleLogout = () => {
-        const url = `http://127.0.0.1:8000/user/logout`;
+        const url = `${ctx.url[0]}/user/logout`;
         const sendLogout = async (url) => {
             const token = JSON.parse(localStorage.getItem("findMovieToken"));
             let response = await fetch(url, {
@@ -48,7 +47,7 @@ const Navbar = () => {
         <nav>
             <figure className="logo">
                 <a href="/">
-                    <img src={logo} alt="Movie Finder" />
+                    <img src={ctx.images[0].logo} alt="Movie Finder" />
                 </a>
             </figure>
             <div>

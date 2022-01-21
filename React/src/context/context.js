@@ -13,9 +13,17 @@ export const Provider = (props) => {
     const [registerRef, updateRegisterRef] = useState(null);
     const [currentMovie, changeCurrentMovie] = useState({});
     const [watchListMovies, updateWatchList] = useState([]);
+    const [images, updateImages] = useState({
+        logo: "https://moviefinder00.herokuapp.com/static/logo.png",
+        no_result: "https://moviefinder00.herokuapp.com/static/no_result.png",
+    });
+    const [baseUrl, changeUrl] = useState(
+        "https://moviefinder00.herokuapp.com"
+        // "http://127.0.0.1:8000"
+    );
 
     const updateRecommended = () => {
-        const url = `http://127.0.0.1:8000/recommend/`;
+        const url = `${baseUrl}/recommend/`;
         let result = fetch(url);
         result.then((response) => {
             response.json().then((data) => {
@@ -29,7 +37,7 @@ export const Provider = (props) => {
     };
 
     const updateWatchListMovies = () => {
-        const url = `http://127.0.0.1:8000/user/watchList`;
+        const url = `${baseUrl}/user/watchList`;
         const token = JSON.parse(localStorage.getItem("findMovieToken"));
         let result = fetch(url, {
             method: "GET",
@@ -45,7 +53,7 @@ export const Provider = (props) => {
     };
 
     const getCurrentMovie = (id) => {
-        const url = `http://127.0.0.1:8000/movie/${id}`;
+        const url = `${baseUrl}/movie/${id}`;
         let result = fetch(url, {});
         result.then((response) => {
             response.json().then((data) => {
@@ -69,6 +77,8 @@ export const Provider = (props) => {
         changeCurrentMovie: getCurrentMovie,
         isLoading: isLoading,
         setIsLoading: setIsLoading,
+        images: [images, updateImages],
+        url: [baseUrl, changeUrl],
     };
 
     return <Context.Provider value={value}>{props.children}</Context.Provider>;

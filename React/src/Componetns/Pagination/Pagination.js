@@ -1,12 +1,14 @@
 import React, { useContext } from "react";
 import movieInfoContext from "../../context/search_MovieInfo_context";
+import Context from "../../context/context";
 
 const Pagination = () => {
+    const context_ = useContext(Context);
     const ctx = useContext(movieInfoContext);
 
     const changePage = (e) => {
         let currentPage = e.target.dataset.pageNum;
-        const url = `http://127.0.0.1:8000/search/${ctx.searchResult.searchQuery}/${currentPage}`;
+        const url = `${context_.url[0]}/search/${ctx.searchResult.searchQuery}/${currentPage}`;
         let result = fetch(url);
         result.then((response) => {
             response.json().then((data) => {

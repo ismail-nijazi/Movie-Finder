@@ -1,15 +1,17 @@
 import React, { useContext, useState } from "react";
 import movieInfoContext from "../../context/search_MovieInfo_context";
-
+import Context from "../../context/context";
 
 const Searchbar = () => {
     const ctx = useContext(movieInfoContext);
+    const context_ = useContext(Context);
     const [error, setError] = useState(false);
     const getSearchResult = (event) => {
         event.preventDefault();
+
         if (event.target.search.value.length > 2) {
+            const url = `${context_.url[0]}/search/${event.target.search.value}`;
             ctx.loading[1](true);
-            const url = `http://127.0.0.1:8000/search/${event.target.search.value}/${ctx.searchResult.current_page}`;
             let result = fetch(url);
             result.then((response) => {
                 response.json().then((data) => {
@@ -19,6 +21,7 @@ const Searchbar = () => {
                         total_pages: data.totalPages,
                         movies: data.result,
                     });
+                    ctx.loading[1](false);
                 });
             });
             ctx.showSeachResultSection(
@@ -26,7 +29,6 @@ const Searchbar = () => {
                 ctx.searchResultSectionRef.current
             );
             setError(false);
-            ctx.loading[1](false);
             ctx.searchResultSectionRef.current.scrollIntoView();
         } else {
             setError(true);
@@ -40,7 +42,7 @@ const Searchbar = () => {
                 onSubmit={getSearchResult}
             >
                 {error && (
-                    <label htmlFor="search" className="error">
+                    <label htmlFor="search" className="searchError">
                         {" "}
                         The search query should at least be 3 charecter!
                     </label>

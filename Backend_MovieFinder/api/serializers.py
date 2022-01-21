@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Movie, WatchList, RecommendedMovie
+from .models import Movie 
 
 class MovieSerializer(serializers.ModelSerializer):
 	class Meta:
@@ -9,4 +9,4 @@ class MovieSerializer(serializers.ModelSerializer):
 class SearchMovieSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Movie
-		fields = ['name', 'image','imdb_rating','imdb_id','genre']
+		fields = ['name', 'image','image_url', 'imdb_rating','imdb_id','genre']

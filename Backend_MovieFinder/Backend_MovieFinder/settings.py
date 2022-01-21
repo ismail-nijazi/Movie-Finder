@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +21,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-o4avr2snq=svjvjt47(t-g=kf*#6os5lqta4)54#q$e$=mwnht'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    # --- Used in production --- 
+    # 'moviefinder00.herokuapp.com'
+]
 
 
 # Application definition
@@ -37,18 +41,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-	'api.apps.ApiConfig',
-	'user.apps.UserConfig',
-	'rest_framework',
-	'rest_framework.authtoken',
-	'corsheaders',
+    'api.apps.ApiConfig',
+    'user.apps.UserConfig',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'corsheaders',
+    'storages'
 ]
 
 
-
 REST_FRAMEWORK = {
-	'DEFAULT_AUTHENTICATION_CLASSES':[ 
-		'rest_framework.authentication.TokenAuthentication']
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication']
 
 }
 
@@ -60,7 +64,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-	'corsheaders.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
 ]
 
@@ -91,8 +95,6 @@ WSGI_APPLICATION = 'Backend_MovieFinder.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -133,10 +135,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-	os.path.join(BASE_DIR, 'React_build/build/static')
+    os.path.join(BASE_DIR, 'React_build/build/static/')
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -147,17 +151,29 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:8000',
-	'http://127.0.0.1:3000',
- 	'http://localhost:3000',
- 	'http://127.0.0.1:8000',
+    # Production 
+    # 'https://moviefinder00.herokuapp.com',
+    # Development
+    'http://127.0.0.1:8000',
+    'http://localhost:3000'
 ]
 
-
+# Email used in this app
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_POST = 587
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('MovieFinder-email-password')
 EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'MovieFinder Team <no-reply@moviefinder00.herokuapp.com>'
 
 
+# AWS S3 setup
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
+AWS_S3_FILES_OVERWRITE = False
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_S3_REGION_NAME = 'eu-north-1'  # change to your region
+AWS_S3_SIGNATURE_VERSION = 's3v4'
+
+django_heroku.settings(locals())

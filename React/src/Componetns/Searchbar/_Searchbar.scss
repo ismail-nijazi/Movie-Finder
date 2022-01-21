@@ -3,7 +3,15 @@
 .searchContainer {
     width: 70%;
     margin: 100px auto;
+
     .searchForm {
+        position: relative;
+        .searchError {
+            display: block;
+            text-align: center;
+            margin: 1rem auto;
+            color: lighten($primaryColor, 5%);
+        }
         div {
             display: flex;
             justify-content: center;
@@ -40,13 +48,6 @@
                     transform: rotate(60deg);
                 }
             }
-        }
-
-        .error {
-            display: block;
-            text-align: center;
-            margin: 1rem 0;
-            color: lighten($primaryColor, 5%);
         }
     }
 }

@@ -15,10 +15,21 @@ const Movie = (props) => {
         );
         ctxMovieInfo.movieInfoSectionRef.current.scrollIntoView();
     };
+
+    const moviesImage = () => {
+        if (props.movie.image_url != null) {
+            if (props.movie.image_url.length > 1) {
+                return (
+                    <img src={props.movie.image_url} alt={props.movie.name} />
+                );
+            }
+        }
+        return <img src={props.movie.image} alt={props.movie.name} />;
+    };
     return (
         <li className="item">
             <a href={`${ctx.movieInfo.imdb_id}`} onClick={showClickedMovieInfo}>
-                <img src={props.movie.image} alt={props.movie.name} />
+                {moviesImage()}
             </a>
 
             <details>

@@ -1,8 +1,9 @@
 node_modules
 **/node_modules
-media/
 Vanilla_Javascript
 **/Vanilla_Javascript
+script.py
+**/media
 
 # Django #
 *.log
@@ -105,3 +106,10 @@ GitHub.sublime-settings
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
+
+#Heroku
+Procfile
+
+#extra files
+Vanilla_Javascript/
+script.py

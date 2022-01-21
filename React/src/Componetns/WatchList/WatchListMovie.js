@@ -13,10 +13,21 @@ const WatchListMovie = (props) => {
         );
         ctxMovieInfo.movieInfoSectionRef.current.scrollIntoView();
     };
+    const moviesImage = () => {
+        if (props.movie.image_url != null) {
+            if (props.movie.image_url.length > 1) {
+                return (
+                    <img src={props.movie.image_url} alt={props.movie.name} />
+                );
+            }
+        }
+        return <img src={props.movie.image} alt={props.movie.name} />;
+    };
+
     return (
         <li className="bookmark" onClick={showClickedMovieInfo}>
             <a href={`/#${ctx.movieInfo.imdb_id}`}>
-                <img src={props.movie.image} alt={props.movie.name} />
+                {moviesImage()}
                 <div>
                     <h5>{props.movie.name}</h5>
                     <i className="fas fa-star"></i>

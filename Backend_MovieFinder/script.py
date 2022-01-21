@@ -13,10 +13,10 @@ with open('movies.json', 'w') as jsonFile:
 	# 	request = requests.get('http://www.omdbapi.com/?s=avengers&page={num}&apikey=fc34f22f')
 	# 	sleep(0.2)
 	# 	data += request.json()['Search']
-	for num in range(1,300):
-		url = f'http://www.omdbapi.com/?s=star&page={num}&apikey=fc34f22f'
+	for num in range(1,10):
+		url = f'http://www.omdbapi.com/?s=legend&page={num}&apikey=2cd1b0c2'
 		if num == 1:
-			url = 'http://www.omdbapi.com/?s=star&apikey=fc34f22f'
+			url = 'http://www.omdbapi.com/?s=legend&apikey=2cd1b0c2'
 		request = requests.get(url)
 		sleep(0.1)
 		print(request.json())
@@ -37,14 +37,14 @@ with open('movies.json', 'r') as file:
 newdata = []
 for movie in data:
 	id_ = movie['imdbID']
-	request = requests.get(f'http://www.omdbapi.com/?i={id_}&apikey=fc34f22f')
+	request = requests.get(f'http://www.omdbapi.com/?i={id_}&apikey=2cd1b0c2')
 	newdata.append(request.json())
 
-# for id_ in ides:
-# 	print(id_)
-	# request = requests.get('http://www.omdbapi.com/?i={id_}&apikey=fc34f22f')
-	# data.append(request.json())
-	# sleep(0.2)
+for id_ in ides:
+	print(id_)
+	request = requests.get('http://www.omdbapi.com/?i={id_}&apikey=2cd1b0c2f')
+	data.append(request.json())
+	sleep(0.2)
 
 with open('movies.json', 'w') as file:
 	json.dump(newdata, file)
