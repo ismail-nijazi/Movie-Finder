@@ -1,0 +1,18 @@
+{% extends "user/base.html" %} {% block body %}
+
+<section class="resetPasswordPage">
+    <div class="emailWasSend">
+        <h3>
+            The reset password email was sent successfully and now you can check
+            your email inbox.
+        </h3>
+        <h3>
+            OBS: The email may lands on spam emails so make sure you check your
+            spam emails as well
+        </h3>
+        <a href="{% url 'home_page' %}"
+            ><i class="fas fa-arrow-left"></i> back home</a
+        >
+    </div>
+</section>
+{% endblock body%}
