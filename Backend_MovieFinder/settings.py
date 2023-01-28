@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     # --- Used in production --- 
-    # 'moviefinder00.herokuapp.com'
+    'https://movie-finder-ivory.vercel.app/'
 ]
 
 
@@ -157,7 +157,8 @@ CORS_ALLOWED_ORIGINS = [
     # 'https://moviefinder00.herokuapp.com',
     # Development
     'http://127.0.0.1:8000',
-    'http://localhost:3000'
+    'http://localhost:3000',
+    'https://movie-finder-ivory.vercel.app'
 ]
 
 # Email used in this app
@@ -166,7 +167,7 @@ EMAIL_POST = 587
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('MovieFinder-email-password')
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'MovieFinder Team <no-reply@moviefinder00.herokuapp.com>'
+DEFAULT_FROM_EMAIL = 'MovieFinder Team <no-reply@movie-finder-ivory.vercel.app/>'
 
 
 # AWS S3 setup
