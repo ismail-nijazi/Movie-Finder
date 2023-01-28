@@ -1,7 +1,7 @@
 {
 	"builds": [
 		{
-			"src": "my_website/wsgi.py",
+			"src": "Backend_MovieFinder/wsgi.py",
 			"use": "@vercel/python",
 			"config": {
 				"maxLambdaSize": "15mb",
@@ -12,7 +12,7 @@
 	"routes": [
 		{
 			"src": "/(.*)",
-			"dest": "my_website/wsgi.py"
+			"dest": "Backend_MovieFinder/wsgi.py"
 		}
 	]
 }
