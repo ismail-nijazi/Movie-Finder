@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     # --- Used in production --- 
     'https://movie-finder-ivory.vercel.app/',
+    'movie-finder-knxf6hcmb-ismail-nijazi.vercel.app',
     '127.0.0.1'
 ]
 
