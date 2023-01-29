@@ -26,9 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    # --- Used in production --- 
-    '*ismail-nijazi.vercel.app/',
-    '127.0.0.1'
+    "*"
 ]
 
 
@@ -153,14 +151,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-CORS_ALLOWED_ORIGINS = [
-    # Production 
-    # 'https://moviefinder00.herokuapp.com',
-    # Development
-    'http://127.0.0.1:8000',
-    'http://localhost:3000',
-    '*-ismail-nijazi.vercel.app/'
-]
+CORS_ALLOWED_ORIGINS = ["*"]
 
 # Email used in this app
 EMAIL_HOST = 'smtp.gmail.com'
