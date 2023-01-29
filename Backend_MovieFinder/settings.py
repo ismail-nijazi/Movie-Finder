@@ -159,7 +159,7 @@ CORS_ALLOWED_ORIGINS = [
     # Development
     'http://127.0.0.1:8000',
     'http://localhost:3000',
-    'https://movie-finder-ivory.vercel.app'
+    'https://movie-finder-qumrkqrry-ismail-nijazi.vercel.app/'
 ]
 
 # Email used in this app
