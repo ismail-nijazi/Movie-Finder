@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     # --- Used in production --- 
-    'https://movie-finder-qumrkqrry-ismail-nijazi.vercel.app/',
+    '*ismail-nijazi.vercel.app/',
     '127.0.0.1'
 ]
 
@@ -159,7 +159,7 @@ CORS_ALLOWED_ORIGINS = [
     # Development
     'http://127.0.0.1:8000',
     'http://localhost:3000',
-    'https://movie-finder-qumrkqrry-ismail-nijazi.vercel.app/'
+    '*-ismail-nijazi.vercel.app/'
 ]
 
 # Email used in this app
